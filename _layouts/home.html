@@ -1,0 +1,68 @@
+---
+layout: home
+---
+
+{% include head.html %}
+
+<blog-header></blog-header>
+
+<kemet-drawer effect="push" side="right">
+  <nav slot="navigation">
+    <blog-site-links location="sidenav"></blog-site-links>
+  </nav>
+  <section slot="content">
+    <div class="posts">
+      {% for post in paginator.posts %}
+        <blog-post-excerpt
+          date="{{ post.date | date: "%b %-d, %Y" }}"
+          url="{{ post.url | relative_url }}"
+          title="{{ post.title | escape }}"
+          author="{{ post.author }}"
+          location="home">
+          <p>{{ post.excerpt }}</p>
+
+          {% if post %}
+            {% assign tags = post.tags %}
+          {% else %}
+            {% assign tags = page.tags %}
+          {% endif %}
+
+          {% if post.tags %}
+            <ul>
+              {% for tag in tags %}
+                  <li><blog-tag href="{{ site.url }}/tag/#{{tag | slugize}}">{{tag}}</blog-tag></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </blog-post-excerpt>
+      {% endfor %}
+    </div>
+
+
+
+
+
+
+      <!--
+        Showing buttons to move to the next and to the previous list of posts (pager buttons).
+      -->
+      {% if paginator.total_pages > 1 %}
+      <ul class="pager">
+          {% if paginator.previous_page %}
+          <li class="previous">
+              <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+          </li>
+          {% endif %}
+          {% if paginator.next_page %}
+          <li class="next">
+              <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+          </li>
+          {% endif %}
+      </ul>
+      {% endif %}
+
+
+  </section>
+</kemet-drawer>
+
+{% include footer.html %}

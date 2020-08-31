@@ -1,0 +1,63 @@
+---
+layout: default
+permalink: /tag/
+title: Tag
+---
+
+<style>
+  blog-post-excerpt {
+    display: none;
+  }
+
+  blog-post-excerpt.show {
+    display: block;
+  }
+</style>
+
+<section class="tags">
+  {% for tag in site.tags %}
+    {% capture tag_name %}{{ tag | first }}{% endcapture %}
+
+    {% for post in site.tags[tag_name] %}
+      <blog-post-excerpt
+        date="{{ post.date | date: "%b %-d, %Y" }}"
+        url="{{ post.url | relative_url }}"
+        title="{{ post.title | escape }}"
+        author="{{ post.author }}"
+        location="home"
+        data-tag="{{ tag_name | slugize }}">
+        <p>{{ post.excerpt }}</p>
+
+        {% if post %}
+            {% assign tags = post.tags %}
+          {% else %}
+            {% assign tags = page.tags %}
+        {% endif %}
+
+        {% if post.tags %}
+          <ul>
+            {% for tag in tags %}
+                <li><blog-tag href="{{ site.url }}/tag/#{{tag | slugize}}">{{tag}}</blog-tag></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </blog-post-excerpt>
+    {% endfor %}
+
+  {% endfor %}
+</section>
+
+<script>
+  const hash = window.location.hash.replace('#', '');
+  const filteredPosts = document.querySelectorAll(`[data-tag="${hash}"]`);
+
+  filteredPosts.forEach((element) => {
+    element.classList.add('show');
+
+    element.querySelectorAll('blog-tag').forEach((blogTag) => {
+      if (blogTag.textContent === hash) {
+        blogTag.setAttribute('current', true);
+      }
+    });
+  });
+</script>

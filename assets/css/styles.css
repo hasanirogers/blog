@@ -1,0 +1,45 @@
+html {
+  --white: #f8f8f8;
+  --primary-color: #05161f;
+  --secondary-color: #e5c116;
+  --tertiary-color: #101010;
+  --text-color: #5d5d5d;
+  --text-color-header: var(--white);
+  --link-color: #007dc1;
+
+  
+}
+
+body {
+  font: 16px 'Ubuntu', sans-serif;
+  color: var(--text-color);
+  line-height: 1.5;
+  margin: 100px 0 0 0;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+[slot="content"] {
+  padding: 0 2rem;
+  margin: auto;
+}
+
+kemet-drawer {
+  position: relative;
+  z-index: 0;
+  display: block;
+  --kemet-drawer-background: var(--tertiary-color);
+}
+
+@media screen and (min-width: 768px) {
+  [slot="content"] {
+    max-width: 1024px;
+  }
+}

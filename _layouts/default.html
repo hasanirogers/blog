@@ -1,0 +1,14 @@
+{% include head.html %}
+
+<blog-header></blog-header>
+
+<kemet-drawer effect="push" side="right">
+  <nav slot="navigation">
+    <blog-site-links location="sidenav"></blog-site-links>
+  </nav>
+  <section slot="content">
+    {{ content }}
+  </section>
+</kemet-drawer>
+
+{% include footer.html %}

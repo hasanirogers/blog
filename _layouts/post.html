@@ -1,0 +1,22 @@
+{% include head.html %}
+
+<blog-header></blog-header>
+
+<kemet-drawer effect="push" side="right">
+  <nav slot="navigation">
+    <blog-site-links location="sidenav"></blog-site-links>
+  </nav>
+  <article slot="content">
+    <blog-post-excerpt
+      date="{{ page.date | date: "%b %-d, %Y" }}"
+      url="{{ post.url | relative_url }}"
+      title="{{ page.title | escape }}"
+      author="{{ page.author }}"
+      location="post">
+      <p>{{ page.excerpt }}</p>
+    </blog-post-excerpt>
+    {{ content }}
+  </article>
+</kemet-drawer>
+
+{% include footer.html %}
