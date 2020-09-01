@@ -14,7 +14,7 @@ title: Tag
   }
 </style>
 
-<section class="tags">
+<section>
   {% for tag in site.tags %}
     {% capture tag_name %}{{ tag | first }}{% endcapture %}
 
@@ -37,7 +37,7 @@ title: Tag
         {% if post.tags %}
           <ul>
             {% for tag in tags %}
-                <li><blog-tag href="{{ site.url }}/tag/#{{tag | slugize}}">{{tag}}</blog-tag></li>
+                <li><blog-tag href="/tag/#{{tag | slugize}}">{{tag}}</blog-tag></li>
             {% endfor %}
           </ul>
         {% endif %}

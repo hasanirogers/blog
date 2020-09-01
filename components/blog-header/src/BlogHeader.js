@@ -3,6 +3,25 @@ import { svgHamburger, svgSearch } from '../../../assets/js/svg.js';
 import '../../blog-site-links/blog-site-links.js';
 
 export class BlogHeader extends LitElement {
+  static get properties() {
+    return {
+      resize: {
+        type: Boolean,
+        reflect: true
+      },
+      resizeOffset: {
+        type: Number,
+      }
+    }
+  }
+
+  constructor() {
+    super();
+
+    this.resize = false;
+    this.resizeOffset = 0;
+  }
+
   static styles = [
     css`
       :host {
@@ -15,6 +34,17 @@ export class BlogHeader extends LitElement {
         padding: 1rem;
         box-sizing: border-box;
         background: var(--header-background-color);
+        transition: height 300ms ease;
+      }
+
+      :host([resize]) {
+        height: 64px;
+      }
+
+      @media screen and (min-width: 640px) {
+        :host([resize]) {
+          height: 100px;
+        }
       }
 
       a {
@@ -78,10 +108,25 @@ export class BlogHeader extends LitElement {
     `;
   }
 
+  firstUpdated() {
+    this.transformHeader();
+  }
+
 
   toggleDrawer() {
     const drawer = document.querySelector('kemet-drawer');
-
     drawer.toggle();
+  }
+
+  transformHeader() {
+    window.addEventListener('scroll', () => {
+      const effectPoint = this.offsetHeight + 100;
+
+      if (window.pageYOffset >= effectPoint) {
+        this.resize = true;
+      } else {
+        this.resize = false;
+      }
+    });
   }
 }
