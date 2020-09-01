@@ -70,6 +70,7 @@ export class BlogHeader extends LitElement {
         </div>
         <blog-site-links location="header"></blog-site-links>
         <div class="extras">
+          <blog-theme-toggle></blog-theme-toggle>
           <a class="search">${svgSearch}</a>
           <a class="hamburger" @click=${this.toggleDrawer}>${svgHamburger}</a>
         </div>
