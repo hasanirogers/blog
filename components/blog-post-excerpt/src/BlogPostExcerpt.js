@@ -134,6 +134,7 @@ export class BlogPostExcerpt extends LitElement {
 
       ::slotted(ul) {
         display: flex;
+        flex-wrap: wrap;
         gap: 1rem;
         margin: 0;
         padding: 0;

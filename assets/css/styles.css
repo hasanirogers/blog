@@ -7,7 +7,7 @@ html {
   --text-color-header: var(--white);
   --link-color: #007dc1;
 
-  
+
 }
 
 body {
@@ -40,6 +40,6 @@ kemet-drawer {
 
 @media screen and (min-width: 768px) {
   [slot="content"] {
-    max-width: 1024px;
+    max-width: 960px;
   }
 }

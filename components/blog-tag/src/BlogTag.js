@@ -65,6 +65,9 @@ export class BlogTag extends LitElement {
 
   goToPage() {
     window.location.href = this.href;
-    window.location.reload();
+
+    if (window.location.pathname === '/tag/') {
+      window.location.reload();
+    }
   }
 }
