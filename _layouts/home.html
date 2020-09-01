@@ -30,7 +30,7 @@ layout: home
           {% if post.tags %}
             <ul>
               {% for tag in tags %}
-                  <li><blog-tag href="{{ site.url }}/tag/#{{tag | slugize}}">{{tag}}</blog-tag></li>
+                  <li><blog-tag href="/tag/#{{tag | slugize}}">{{tag}}</blog-tag></li>
               {% endfor %}
             </ul>
           {% endif %}

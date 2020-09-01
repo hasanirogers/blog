@@ -24,6 +24,7 @@ export class BlogThemeToggle extends LitElement {
         position: relative;
         width: 54px;
         height: 32px;
+        transform: translateY(-2px);
       }
 
       svg {

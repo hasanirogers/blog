@@ -23,7 +23,7 @@ export class BlogPostExcerpt extends LitElement {
       :host {
         display: block;
         margin: 1rem 0;
-        padding: 2rem 0;
+        padding: 0;
         border-bottom: 1px solid var(--text-color);
       }
 
@@ -46,10 +46,16 @@ export class BlogPostExcerpt extends LitElement {
       }
 
       h2 {
-        color: var(--primary-color);
+        color: var(--hading-color);
         font-size: 2.5rem;
         font-weight: normal;
-        margin: 1.5rem 0;
+        margin: 0;
+      }
+
+      @media screen and (min-width: 640px) {
+        h2 {
+          margin: 1rem 0;
+        }
       }
 
       @media screen and (min-width: 768px) {
@@ -72,7 +78,7 @@ export class BlogPostExcerpt extends LitElement {
       time {
         font-size: 1.5rem;
         display: block;
-        margin-bottom: 1rem;
+        margin: 1rem 0;
       }
 
       @media screen and (min-width: 768px) {
@@ -110,10 +116,14 @@ export class BlogPostExcerpt extends LitElement {
         font-size: 2rem;
       }
 
+      .read-more {
+        margin-bottom: 2rem;
+      }
+
       .back-home {
         display: inline-block;
         position: relative;
-        top: -1rem;
+        margin-top: 0;
       }
 
       .back-home span {
@@ -136,7 +146,7 @@ export class BlogPostExcerpt extends LitElement {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
-        margin: 0;
+        margin-top: 2rem;
         padding: 0;
         list-style: none;
       }

@@ -22,7 +22,7 @@ export class BlogTag extends LitElement {
       a {
         cursor: pointer;
         color: var(--white);
-        background: var(--primary-color);
+        background: var(--blog-tag-background-color);
         transition: background-color 300ms ease;
       }
 
@@ -40,9 +40,9 @@ export class BlogTag extends LitElement {
 
       :host([current]) span {
         cursor: default;
-        color: var(--primary-color);
+        color: var(--blog-tag-current-text-color);
         background: transparent;
-        border: 2px solid var(--primary-color);
+        border: 2px solid var(--blog-tag-background-color);
       }
     `
   ];

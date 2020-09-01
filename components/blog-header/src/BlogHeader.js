@@ -14,7 +14,7 @@ export class BlogHeader extends LitElement {
         height: 100px;
         padding: 1rem;
         box-sizing: border-box;
-        background: var(--primary-color);
+        background: var(--header-background-color);
       }
 
       a {
@@ -70,8 +70,8 @@ export class BlogHeader extends LitElement {
         </div>
         <blog-site-links location="header"></blog-site-links>
         <div class="extras">
-          <blog-theme-toggle></blog-theme-toggle>
           <a class="search">${svgSearch}</a>
+          <blog-theme-toggle></blog-theme-toggle>
           <a class="hamburger" @click=${this.toggleDrawer}>${svgHamburger}</a>
         </div>
       </header>
