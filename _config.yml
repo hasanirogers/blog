@@ -46,3 +46,16 @@ pagination:
   limit: 0
   sort_field: 'date'
   sort_reverse: true
+
+# algolia
+algolia:
+  application_id: R2CFUR5SSI
+  index_name: prod_HASANIROGERSBLOG
+
+# Reference Links
+# https://github.com/jekyll/minima
+# https://github.com/sverrirs/jekyll-paginate-v2/tree/master/examples
+# https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md
+# https://blog.webjeda.com/jekyll-categories/
+# https://community.algolia.com/jekyll-algolia/getting-started.html
+# https://www.algolia.com/doc/api-client/methods/search/

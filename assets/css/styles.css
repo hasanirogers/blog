@@ -13,14 +13,22 @@ html {
   --heading-color: var(--primary-color);
   --blog-tag-background-color: var(--primary-color);
   --blog-tag-current-text-color: var(--primary-color);
+  --thick-border-color: var(--primary-color);
 }
 
 html[theme="dark"] {
+  --white: #a1a1a1;
+
   --background-color: var(--tertiary-color);
   --header-background-color: var(--black);
   --heading-color: var(--text-color);
   --blog-tag-background-color: var(--text-color);
   --blog-tag-current-text-color: var(--text-color);
+  --thick-border-color: var(--text-color);
+}
+
+html[modalisopen] {
+  overflow: hidden;
 }
 
 body {

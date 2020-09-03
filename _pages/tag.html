@@ -51,6 +51,8 @@ title: Tag
   const hash = window.location.hash.replace('#', '');
   const filteredPosts = document.querySelectorAll(`[data-tag="${hash}"]`);
 
+  document.title = `${hash} | Hasani Rogers's Blog`
+
   filteredPosts.forEach((element) => {
     element.classList.add('show');
 

@@ -55,6 +55,13 @@ export class BlogHeader extends LitElement {
 
       h1 {
         margin: 0;
+        font-size: 1.5rem;
+      }
+
+      @media screen and (min-width: 640px) {
+        h1 {
+          font-size: 1.75rem;
+        }
       }
 
       header {
@@ -87,6 +94,16 @@ export class BlogHeader extends LitElement {
         width: 32px;
         height: 32px;
       }
+
+      svg #Path,
+      svg #Oval {
+        fill: var(--white);
+        stroke: var(--white);
+      }
+
+      svg #Oval {
+        fill: transparent;
+      }
     `
   ];
 
@@ -100,7 +117,7 @@ export class BlogHeader extends LitElement {
         </div>
         <blog-site-links location="header"></blog-site-links>
         <div class="extras">
-          <a class="search">${svgSearch}</a>
+          <a class="search" @click=${() => this.openModal()}>${svgSearch}</a>
           <blog-theme-toggle></blog-theme-toggle>
           <a class="hamburger" @click=${this.toggleDrawer}>${svgHamburger}</a>
         </div>
@@ -128,5 +145,10 @@ export class BlogHeader extends LitElement {
         this.resize = false;
       }
     });
+  }
+
+  openModal() {
+    const modal = document.getElementById('searchmodal');
+    modal.open();
   }
 }

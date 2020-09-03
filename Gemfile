@@ -21,6 +21,7 @@ group :jekyll_plugins do
   gem 'jekyll-paginate-v2', '1.9.0'
   gem "jekyll-feed"
   gem 'jekyll-compose'
+  gem 'jekyll-algolia'
   gem "kramdown-parser-gfm"
 end
 

@@ -1,0 +1,9 @@
+<script>
+  document.addEventListener('kemet-modal-open', () => {
+    document.querySelector('html').setAttribute('modalisopen', true);
+  });
+
+  document.addEventListener('kemet-modal-close', () => {
+    document.querySelector('html').removeAttribute('modalisopen');
+  });
+</script>

@@ -8,7 +8,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&ver=5.2" rel="stylesheet">
     <link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}">
-    <title>{{ site.title }}</title>
+    <title>{{ page.title | default: site.title }}</title>
     <script defer src="https://unpkg.com/es-module-shims@latest/dist/es-module-shims.js"></script>
   </head>
   <body>
