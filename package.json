@@ -18,6 +18,7 @@
   },
   "homepage": "http://blog.hasanirogers.me",
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "ssh2-sftp-client": "^5.3.0"
   }
 }
