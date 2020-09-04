@@ -2,7 +2,7 @@
 
 const path = require('path');
 const SftpClient = require('ssh2-sftp-client');
-const remoteDir = '/home/zerodivide85/sites/blog'
+const remoteDir = '/home/zerodivide85/sites/blog';
 
 require('dotenv').config();
 
