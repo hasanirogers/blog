@@ -3,6 +3,7 @@ node_js:
   - 10
 before_script:
   - npm install
+  - bundle install
   - rm -fr _site
   - bundle exec jekyll build
 script:
