@@ -1,5 +1,6 @@
 language: ruby
 before_script:
+  - node -v
   - npm install
   - rm -fr _site
   - bundle exec jekyll build
