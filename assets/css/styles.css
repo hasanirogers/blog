@@ -1,4 +1,5 @@
 html {
+  /* color pallet */
   --white: #f8f8f8;
   --black: #080808;
   --primary-color: #05161f;
@@ -6,7 +7,9 @@ html {
   --tertiary-color: #101010;
   --text-color: #5d5d5d;
   --link-color: #007dc1;
+  --code-color: #d69d85;
 
+  /* specific areas */
   --background-color: var(--white);
   --text-color-header: var(--white);
   --header-background-color: var(--primary-color);
@@ -17,6 +20,7 @@ html {
 }
 
 html[theme="dark"] {
+  /* dark mode overwrites */
   --white: #a1a1a1;
 
   --background-color: var(--tertiary-color);
@@ -52,9 +56,15 @@ img {
   max-width: 100%;
 }
 
+code {
+  font-size: 90%;
+  color: var(--code-color);
+}
+
 [slot="content"] {
   padding: 0 2rem;
   margin: auto;
+  line-height: 2;
 }
 
 kemet-drawer {
@@ -68,4 +78,9 @@ kemet-drawer {
   [slot="content"] {
     max-width: 960px;
   }
+}
+
+pre.lineno {
+  border-right: 1px solid #404040;
+  padding-right: 1rem;
 }

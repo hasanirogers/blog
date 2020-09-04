@@ -1,9 +1,40 @@
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/highlight.min.js"></script>
 <script>
-  document.addEventListener('kemet-modal-open', () => {
-    document.querySelector('html').setAttribute('modalisopen', true);
-  });
+  const init = () => {
+     // init highlight js
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+    });
 
-  document.addEventListener('kemet-modal-close', () => {
-    document.querySelector('html').removeAttribute('modalisopen');
-  });
+    // handle modal content lock
+    document.addEventListener('kemet-modal-open', () => {
+      document.querySelector('html').setAttribute('modalisopen', true);
+    });
+
+    document.addEventListener('kemet-modal-close', () => {
+      document.querySelector('html').removeAttribute('modalisopen');
+    });
+
+    // handle deep links
+    // TODO: figure out why this doesn't work by default
+    document.querySelectorAll('a[href*="#"').forEach((link) => {
+      const hash = link.href.replace(`${location.origin}/`, '');
+
+      if (hash.charAt(0) === '#') {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          const area = document.querySelector(hash);
+          const headerHeight = 100;
+
+          area.scrollIntoView(true);
+
+          if (window.scrollY) window.scroll(0, window.scrollY - headerHeight);
+        });
+      }
+    });
+  };
+
+  init();
 </script>

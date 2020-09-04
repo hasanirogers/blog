@@ -24,6 +24,10 @@ host: 0.0.0.0
 
 # Build settings
 markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
 plugins:
   - jekyll-paginate-v2
 exclude:
@@ -59,3 +63,4 @@ algolia:
 # https://blog.webjeda.com/jekyll-categories/
 # https://community.algolia.com/jekyll-algolia/getting-started.html
 # https://www.algolia.com/doc/api-client/methods/search/
+# https://developer.epages.com/blog/coding/how-to-implement-endless-scrolling-for-jekyll-blog-posts/

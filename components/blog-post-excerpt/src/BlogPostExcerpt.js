@@ -47,14 +47,16 @@ export class BlogPostExcerpt extends LitElement {
 
       h2 {
         color: var(--hading-color);
-        font-size: 2.5rem;
+        font-size: 1.75rem;
         font-weight: normal;
-        margin: 0;
+        line-height: 1.2;
+        margin: 0.5rem 0 0 0;
       }
 
       @media screen and (min-width: 640px) {
         h2 {
           margin: 1rem 0;
+          font-size: 2.5rem;
         }
       }
 
@@ -65,7 +67,6 @@ export class BlogPostExcerpt extends LitElement {
 
         :host([location="post"]) h2 {
           grid-row: 1;
-          grid-column: 1/1;
         }
       }
 
