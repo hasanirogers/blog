@@ -18,23 +18,19 @@ const main = async () => {
   const client = new SftpClient();
   const src = path.join(__dirname, '_site');
 
-  if (fs.lstatSync(src).isDirectory()) {
-    try {
-      await client.connect(config);
-      await client.rmdir(remoteDir, true);
+  try {
+    await client.connect(config);
+    await client.rmdir(remoteDir, true);
 
-      client.on('upload', info => {
-        console.log(`Listener: Uploaded ${info.source}`);
-      });
+    client.on('upload', info => {
+      console.log(`Listener: Uploaded ${info.source}`);
+    });
 
-      let result = await client.uploadDir(src, remoteDir);
+    let result = await client.uploadDir(src, remoteDir);
 
-      return result;
-    } finally {
-      client.end();
-    }
-  } else {
-    console.log(`${src} is not a directory`);
+    return result;
+  } finally {
+    client.end();
   }
 }
 
