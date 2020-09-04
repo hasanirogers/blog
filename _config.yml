@@ -34,6 +34,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - node_modules
 include: [_pages]
 
 # Produces a cleaner folder structure when using categories

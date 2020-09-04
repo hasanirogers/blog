@@ -65,6 +65,13 @@ code {
   padding: 0 2rem;
   margin: auto;
   line-height: 2;
+  clear: both;
+}
+
+@media screen and (min-width: 768px) {
+  [slot="content"] {
+    max-width: 960px;
+  }
 }
 
 kemet-drawer {
@@ -74,13 +81,17 @@ kemet-drawer {
   --kemet-drawer-background: var(--tertiary-color);
 }
 
-@media screen and (min-width: 768px) {
-  [slot="content"] {
-    max-width: 960px;
-  }
-}
 
 pre.lineno {
   border-right: 1px solid #404040;
   padding-right: 1rem;
+}
+
+.float-left img {
+  float: left;
+  padding: 0 1.5rem 0 0;
+}
+
+.circle img {
+  border-radius: 50%;
 }

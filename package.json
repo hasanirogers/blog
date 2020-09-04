@@ -1,0 +1,23 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "node deploy.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hasanirogers/blog.git"
+  },
+  "keywords": [],
+  "author": "Hasani Rogers <hasani.rogers@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hasanirogers/blog/issues"
+  },
+  "homepage": "http://blog.hasanirogers.me",
+  "devDependencies": {
+    "ssh2-sftp-client": "^5.3.0"
+  }
+}

@@ -207,10 +207,9 @@ export class BlogSearchmodal extends LitElement {
 
     index.search(searchTerm, {
       attributesToRetrieve: attributes,
-      hitsPerPage: 10,
+      hitsPerPage: 5,
       page: this.currentPage
     }).then((data) => {
-      console.log(data);
       this.totalPages = data.nbPages;
 
       if (searchTerm.length > 1) {

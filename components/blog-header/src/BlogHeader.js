@@ -67,6 +67,8 @@ export class BlogHeader extends LitElement {
       header {
         display: grid;
         grid-template-columns: 1fr auto;
+        max-width: 1440px;
+        margin: auto;
         height: 100%;
         align-items: center;
       }
