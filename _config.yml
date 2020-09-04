@@ -35,6 +35,9 @@ exclude:
   - Gemfile.lock
   - vendor
   - node_modules
+  - package-lock.json
+  - package.json
+  - deploy.js
 include: [_pages]
 
 # Produces a cleaner folder structure when using categories

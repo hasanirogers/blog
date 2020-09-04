@@ -1,0 +1,10 @@
+language: ruby
+before_script:
+  - npm install
+  - rm -fr _site
+  - bundle exec jekyll build
+script:
+  - npm run deploy
+branches:
+  only:
+    - master
