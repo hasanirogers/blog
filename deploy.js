@@ -17,6 +17,8 @@ const main = async () => {
   const client = new SftpClient();
   const src = path.join(__dirname, '_site');
 
+  console.log('src path: ', src);
+
   try {
     await client.connect(config);
 
