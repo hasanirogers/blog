@@ -1,5 +1,6 @@
 'use strict';
 
+const fs = require('fs');
 const path = require('path');
 const SftpClient = require('ssh2-sftp-client');
 const remoteDir = '/home/zerodivide85/sites/blog';
@@ -17,23 +18,23 @@ const main = async () => {
   const client = new SftpClient();
   const src = path.join(__dirname, '_site');
 
-  console.log('src path: ', src);
+  if (fs.lstatSync(src).isDirectory()) {
+    try {
+      await client.connect(config);
+      await client.rmdir(remoteDir, true);
 
-  try {
-    await client.connect(config);
+      client.on('upload', info => {
+        console.log(`Listener: Uploaded ${info.source}`);
+      });
 
-    await client.rmdir(remoteDir, true);
+      let result = await client.uploadDir(src, remoteDir);
 
-
-    client.on('upload', info => {
-      console.log(`Listener: Uploaded ${info.source}`);
-    });
-
-    let result = await client.uploadDir(src, remoteDir);
-
-    return result;
-  } finally {
-    client.end();
+      return result;
+    } finally {
+      client.end();
+    }
+  } else {
+    console.log(`${src} is not a directory`);
   }
 }
 
