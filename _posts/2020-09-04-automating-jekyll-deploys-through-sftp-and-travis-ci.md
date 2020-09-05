@@ -4,7 +4,7 @@ title: Automating Jekyll deploys through sFTP and Travis CI
 date: 2020-09-04 13:39 -0400
 author: Hasani Rogers
 tags: jekyll travis-ci deploys sftp automation
-excerpt: I'm not a node.js developer. But, with a little bit of assistance and Javascript know-how, I successfully pulled of an automated Jekyll pipeline. Now this blog auto updates when I push to master on GitHub.
+excerpt: I'm not a node.js developer. But, with a little bit of assistance and Javascript know-how, I successfully pulled off an automated Jekyll pipeline. Now this blog auto updates when I push to master on GitHub.
 ---
 
 I am Front End Developer that doesn't mess around with pipelines at all. I leave that stuff to the DevOps guys. However, I watched a training video on LinkedIn Learning called [Learning Static Site Building with Jekyll](https://www.linkedin.com/learning/learning-static-site-building-with-jekyll/ftp-next-steps). I wanted to use Jekyll to build this blog. Figured I get some tips. One really helpful thing about the course is that Nate talks about building an automated pipeline. Chapter 5 specifically handles the case of doing this via FTP. I learned a lot watching the course but if you're paying attention it's a little old (was published in 2018). Nate has some videos where he talks about writing a deploy script. I followed it verbatim with the exception of updating the right paths to my environment. To my dismay I encountered errors. Memory Leaks to be exact. Node warned me about this and the script failed. Being a Front End Dev I was screwed.
