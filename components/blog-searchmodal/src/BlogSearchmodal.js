@@ -5,13 +5,6 @@ import { svgSearch } from '../../../assets/js/svg.js';
 export class BlogSearchmodal extends LitElement {
   static get properties() {
     return {
-      href: {
-        type: String
-      },
-      current: {
-        type: Boolean,
-        reflect: true
-      },
       hits: {
         type: Array,
       },
@@ -68,6 +61,13 @@ export class BlogSearchmodal extends LitElement {
         box-sizing: border-box;
         background: var(--white);
         border: 2px solid  var(--thick-border-color);
+      }
+
+      input::-webkit-search-decoration,
+      input::-webkit-search-cancel-button,
+      input::-webkit-search-results-button,
+      input::-webkit-search-results-decoration {
+        -webkit-appearance: none;
       }
 
       form {
