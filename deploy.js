@@ -1,8 +1,8 @@
 'use strict';
 
-const fs = require('fs');
 const path = require('path');
 const SftpClient = require('ssh2-sftp-client');
+const { exec } = require("child_process");
 const remoteDir = '/home/zerodivide85/sites/blog';
 
 require('dotenv').config();
@@ -27,6 +27,20 @@ const main = async () => {
     });
 
     let result = await client.uploadDir(src, remoteDir);
+
+    exec(`ALGOLIA_API_KEY='${process.env.ALGOLIA_API_KEY}' bundle exec jekyll algolia`, (error, stdout, stderr) => {
+      if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+      }
+
+      if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+      }
+
+      console.log(`stdout: ${stdout}`);
+    });
 
     return result;
   } finally {

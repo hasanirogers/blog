@@ -6,7 +6,6 @@ before_script:
   - bundle install
   - rm -fr _site
   - bundle exec jekyll build
-  - ALGOLIA_API_KEY='33d409256adadac86535ec64b49e135f' bundle exec jekyll algolia
 script:
   - npm run deploy
 branches:
