@@ -133,6 +133,7 @@ export class BlogSearchmodal extends LitElement {
       ul {
         display: flex;
         gap: 0.5rem;
+        flex-wrap: wrap;
         margin: 1rem 0 0 0;
         padding: 0;
         list-style: none;
