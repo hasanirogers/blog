@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to use React and Web Components by Example
+title: How to use Web Components in React by Example
 date: 2020-09-14 16:10 -0400
 author: Hasani Rogers
 tags: react web-components lit-element wrapper
