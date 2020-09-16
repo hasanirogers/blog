@@ -8,6 +8,8 @@ html {
   --text-color: #5d5d5d;
   --link-color: #007dc1;
   --code-color: #d69d85;
+  --callout-color:#ffeb51;
+  --callout-border-color: #ff9b51;
 
   /* specific areas */
   --background-color: var(--white);
@@ -94,4 +96,11 @@ pre.lineno {
 
 .circle img {
   border-radius: 50%;
+}
+
+.callout {
+  background: var(--callout-color);
+  border-left: 6px solid var(--callout-border-color);
+  padding: 1.5rem;
+  line-height: 1.75;
 }
