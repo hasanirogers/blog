@@ -1,19 +1,19 @@
 ---
 layout: post
-title: Adding search functionality with Lit Element and Algolia
+title: Search functionality with LitElement and Algolia
 date: 2020-09-08 09:31 -0400
 author: Hasani Rogers
-tags: lit element lit-element algolia search
-excerpt: Adding search functionality to your site might seem like a complicated feature. With Lit Element and Algolia working together however, it's pretty easy. Lets break down how to do this!
+tags: lit-element algolia search
+excerpt: Adding search functionality to your site might seem like a complicated feature. With LitElement and Algolia working together however, it's pretty easy. Lets break down how to do this!
 ---
 
-What is Algolia? Algolia is a [service](https://www.algolia.com/users/sign_up) you sign up for that handles search data. Don't worry they have a [free plan](https://www.algolia.com/pricing/) for those of you with simple needs. The Algolia service is used along side of [algoliasearch](https://www.npmjs.com/package/algoliasearch) and [instantsearch](https://www.npmjs.com/package/instantsearch.js) plugins. Instantsearch.js is part of a library of plugins that can be used with React, Angular, Vue, etc. In this post, we'll be using Lit Element without Instantsearch.js.
+What is Algolia? Algolia is a [service](https://www.algolia.com/users/sign_up) you sign up for that handles search data. Don't worry they have a [free plan](https://www.algolia.com/pricing/) for those of you with simple needs. The Algolia service is used along side of [algoliasearch](https://www.npmjs.com/package/algoliasearch) and [instantsearch](https://www.npmjs.com/package/instantsearch.js) plugins. Instantsearch.js is part of a library of plugins that can be used with React, Angular, Vue, etc. In this post, we'll be using LitElement without Instantsearch.js.
 
 Before we start I need to state that this blog is built with Jekyll. My experience with Algolia is a in a Jekyll environment. So I'm going to write from the perspective of using Jekyll. Regardless, before we dive into the code, you should know that you are responsible for getting data from your site to Algolia. In Algolia this is called indexing. To index content for Jekyll, [follow this guide](https://community.algolia.com/jekyll-algolia/getting-started.html). If you're not using Jekyll, you need to find the appropriate way to [send your data to Algolia](https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/). For example, there is an [Algolia Gatsby plugin](https://github.com/algolia/gatsby-plugin-algolia) for you Gatsby users (although at the time of this writting it's in beta). Algolia also [walks you through using it with WordPress](https://www.algolia.com/doc/integration/wordpress/getting-started/quick-start/?language=php).
 
 With that said lets begin.
 
-We're going to be creating search functionality that behaves like this blog. This blog uses [kemet-modal](http://kemet.online/modal) to display a search box when users click on the search icon. I won't break down the modal here (read the Kemet docs if interested) but we'll be starting with a Lit Element component called `blog-searchmodal`.
+We're going to be creating search functionality that behaves like this blog. This blog uses [kemet-modal](http://kemet.online/modal) to display a search box when users click on the search icon. I won't break down the modal here (read the Kemet docs if interested) but we'll be starting with a LitElement component called `blog-searchmodal`.
 
 The skeleton of our component looks like this:
 
@@ -290,4 +290,4 @@ tagLink(event, tag) {
 }
 ```
 
-And there you go. Search functionality with Lit Element and Algolia. Checkout my repo if you want to see [the full implementation](https://github.com/hasanirogers/blog/blob/master/components/blog-searchmodal/src/BlogSearchmodal.js).
+And there you go. Search functionality with LitElement and Algolia. Checkout my repo if you want to see [the full implementation](https://github.com/hasanirogers/blog/blob/master/components/blog-searchmodal/src/BlogSearchmodal.js).

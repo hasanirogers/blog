@@ -1,13 +1,13 @@
 ---
 layout: post
-title: How to use Web Components in React by Example
+title: How to use LitElement Components in React by Example
 date: 2020-09-14 16:10 -0400
 author: Hasani Rogers
 tags: react web-components lit-element wrapper
-excerpt: Web Components are great. They theoretically can be used with any library or framework. React takes a little bit more effort to work with Web Components however. In this post I'll use Kemet components, which are built with Lit Element, in a React application by using wrappers. Although I'm using Lit Element, the principals here apply to any Web Component.
+excerpt: Web Components are great. They theoretically can be used with any library or framework. React takes a little bit more effort to work with Web Components however. In this post I'll use Kemet components, which are built with LitElement, in a React application by using wrappers. Although I'm using LitElement, the principals here apply to Web Components built using anything.
 ---
 
-So I love Lit Element. I've also come to like React. Every since the advent of Angular.js (that's right, Angular 1.x) I've dreamt of components that were framework agnostic. This is why I invest so much energy in Lit Element. It allows me to create those framework agnostic components. It lets me do it in a way that's similar to React as well.
+So I love LitElement. I've also come to like React. Every since the advent of Angular.js (that's right, Angular 1.x) I've dreamt of components that were framework agnostic. This is why I invest so much energy in LitElement. It allows me to create those framework agnostic components. It lets me do it in a way that's similar to React as well.
 
 When talking about Web Components though, React is tricky. At the time of this writing it has a score of 71% on [Custom Element Everywhere](https://custom-elements-everywhere.com#react) and it's been that way for a while. Most of the other major frameworks there score much better. Why is that? Well most of the issues involve passing rich data and handling events.
 

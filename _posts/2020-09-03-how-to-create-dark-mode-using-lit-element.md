@@ -1,18 +1,18 @@
 ---
 layout: post
-title: How to create Dark Mode using Lit Element
+title: How to create Dark Mode in a LitElement App
 date: 2020-09-03 15:10 -0400
 author: Hasani Rogers
-tags: lit element lit-element dark dark-mode theme css-variables
-excerpt: Thanks to themes, creating a dark mode with Lit Element is a lot easier than one might imagine.
+tags: lit-element dark-mode theme css-variables
+excerpt: Thanks to themes, creating a dark mode with LitElement is a lot easier than one might imagine.
 ---
 
-A developer at my day job was inspired by the design of the [Stripe API](https://stripe.com/docs/api) documentation site. One of the thing she liked was the dark mode. She wanted to use it to toggle themes based on what content a user was looking at. Since at [Ford Member Account](https://sso.ci.ford.com/) our internal documentation site is build using Lit Element, I was given the opportunity to implement a dark mode with Lit Element. Thanks to themes, creating a dark mode with Lit Element is a lot easier than one might imagine. Our docs site is internal but this blog's dark mode uses Lit Element too! In this post I'll break down how to create dark mode using Lit Element.
+A developer at my day job was inspired by the design of the [Stripe API](https://stripe.com/docs/api) documentation site. One of the thing she liked was the dark mode. She wanted to use it to toggle themes based on what content a user was looking at. Since at [Ford Member Account](https://sso.ci.ford.com/) our internal documentation site is build using LitElement, I was given the opportunity to implement a dark mode with LitElement. Thanks to themes, creating a dark mode with LitElement is a lot easier than one might imagine. Our docs site is internal but this blog's dark mode uses LitElement too! In this post I'll break down how to create dark mode using LitElement.
 
 First things first. There two primary thing we'll focus on:
 
 1. [Creating a component to toggle the theme](#creating-a-component-to-toggle-the-theme).
-2. [Theme-ing with Lit Element](#themeing-with-lit-element).
+2. [Theme-ing with LitElement](#themeing-with-lit-element).
 
 {:#creating-a-component-to-toggle-the-theme}
 ## Creating a component to toggle the theme.
@@ -43,7 +43,7 @@ export class BlogThemeToggle extends LitElement {
 window.customElements.define('blog-theme-toggle', BlogThemeToggle);
 ```
 
-Nothing to fancy here yet. It's a standard Lit Element class with some markup and a `theme` property. Notice how on line 8 we have `reflect` set to `true`. This is going to be important later on. If you don't know already, reflect means to observe the value of a property and update it automatically as an attribute on the component.
+Nothing to fancy here yet. It's a standard LitElement class with some markup and a `theme` property. Notice how on line 8 we have `reflect` set to `true`. This is going to be important later on. If you don't know already, reflect means to observe the value of a property and update it automatically as an attribute on the component.
 
 Next we want to focus on styling first. Notice that my blog has an icon for light and dark modes. Lets make that. First we need to import some SVGs for the icon.
 
@@ -208,7 +208,7 @@ initTheme() {
 And there you have it. A switch toggle that will toggle our theme from light to dark every time a user clicks it. Now on to theme-ing.
 
 {:#themeing-with-lit-element}
-## Theme-ing with Lit Element
+## Theme-ing with LitElement
 
 Now that we're dynamically setting the `theme` attribute on the `html` tag of the document, we can use attribute selectors to swap out the values for variables we have used inside of our components. This is why instead of having `#fff` our toggle component used `var(--white)`. The white css variable is going to be a different value in dark mode!
 
