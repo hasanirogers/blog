@@ -24,10 +24,17 @@ host: 0.0.0.0
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 kramdown:
+  input: GFM
   syntax_highlighter_opts:
+    default_lang: html
+    css_class   : 'rouge-highlighter'
+    span:
+      line_numbers: false
     block:
       line_numbers: true
+      start_line: 1
 plugins:
   - jekyll-paginate-v2
 exclude:
@@ -47,7 +54,7 @@ permalink: /:year/:month/:title.html
 pagination:
   enabled: true
   collection: 'posts'
-  per_page: 3
+  per_page: 5
   offset: 2
   permalink: '/page/:num/'
   title: ':title - page :num of :max'
@@ -68,3 +75,4 @@ algolia:
 # https://community.algolia.com/jekyll-algolia/getting-started.html
 # https://www.algolia.com/doc/api-client/methods/search/
 # https://developer.epages.com/blog/coding/how-to-implement-endless-scrolling-for-jekyll-blog-posts/
+# https://bnhr.xyz/2017/03/25/add-syntax-highlighting-to-your-jekyll-site-with-rouge.html

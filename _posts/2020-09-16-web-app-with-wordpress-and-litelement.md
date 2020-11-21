@@ -7,6 +7,9 @@ tags: wordpress lit-element web-app
 excerpt: In this much needed post I'll cover how I created my portfolio site as a modern web app in WordPress using LitElement.
 ---
 
+_Update 11-20-2020: You can continue reading this post, or you can do this the easy way with my [LitPress Package](https://www.npmjs.com/package/litpress)._
+
+
 So if you do a google search for ["build spa in wordpress with litelement"](https://www.google.com/search?q=build+spa+in+wordpress+with+litelement&oq=build+spa+in+wordpress+with+litelement) the first hit that comes up is [a talk I gave at a meetup](https://www.meetup.com/metro-detroit-wordpress-meetup/events/265302697/) discussing the topic. The rest of the hits don't even touch on the topic at hand. They mostly talk about just building with LitElement. Thus, I'm here to shed a light. WordPress is a huge platform and while it may be decreasing in popularity, you should be able to Google how to get LitElement and WordPress working together. In this much needed post I'll cover how I created my portfolio site as a modern web app in WordPress using LitElement.
 
 {:.callout}
