@@ -58,9 +58,16 @@ img {
   max-width: 100%;
 }
 
+pre {
+  margin: 0;
+}
+
 code {
-  font-size: 90%;
+  font-size: 14.5px;
+  font-family: monospace;
+  padding: 2px 4px;
   color: var(--code-color);
+  background: #101010;
 }
 
 [slot="content"] {
@@ -83,10 +90,9 @@ kemet-drawer {
   --kemet-drawer-background: var(--tertiary-color);
 }
 
-
-pre.lineno {
+.rouge-gutter pre {
   border-right: 1px solid #404040;
-  padding-right: 1rem;
+  padding: 0 1rem;
 }
 
 .float-left img {
@@ -103,4 +109,19 @@ pre.lineno {
   border-left: 6px solid var(--callout-border-color);
   padding: 1.5rem;
   line-height: 1.75;
+}
+
+.filepath {
+  margin: 0;
+  background: #1e1e1e;
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  font-size: 14.5px;
+  font-family: monospace;
+  border-bottom: 1px solid #404040;
+}
+
+.highlight code {
+  display: block;
+  overflow-x: auto;
 }

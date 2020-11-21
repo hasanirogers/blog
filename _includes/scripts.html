@@ -1,13 +1,6 @@
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/highlight.min.js"></script>
 <script>
   const init = () => {
-     // init highlight js
-    document.addEventListener('DOMContentLoaded', (event) => {
-      document.querySelectorAll('pre code').forEach((block) => {
-        hljs.highlightBlock(block);
-      });
-    });
-
     // handle modal content lock
     document.addEventListener('kemet-modal-open', () => {
       document.querySelector('html').setAttribute('modalisopen', true);
