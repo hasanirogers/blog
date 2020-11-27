@@ -50,6 +50,8 @@ export class BlogPaginator extends LitElement {
       :host {
         display: block;
         text-align: center;
+        position: relative;
+        top: -0.25rem;
       }
 
       a {
@@ -62,7 +64,12 @@ export class BlogPaginator extends LitElement {
         align-items: center;
         gap: 0.25rem;
         padding: 0;
+        margin: 0;
         list-style: none;
+      }
+
+      li {
+        line-height: 1;
       }
 
       @media screen and (min-width: 640px) {

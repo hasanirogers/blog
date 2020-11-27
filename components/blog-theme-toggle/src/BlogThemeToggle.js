@@ -119,6 +119,14 @@ export class BlogThemeToggle extends LitElement {
       this.theme = 'light';
     }
 
+    this.dispatchEvent(
+      new CustomEvent('blog-theme-change', {
+        bubbles: true,
+        composed: true,
+        detail: this.theme,
+      }),
+    );
+
     window.localStorage.setItem('hasanirogersblog-theme', this.theme);
     this.initTheme();
   }

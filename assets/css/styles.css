@@ -19,6 +19,9 @@ html {
   --blog-tag-background-color: var(--primary-color);
   --blog-tag-current-text-color: var(--primary-color);
   --thick-border-color: var(--primary-color);
+
+  --header-height: 100px;
+  --header-height-resize: 64px;
 }
 
 html[theme="dark"] {
@@ -62,6 +65,11 @@ pre {
   margin: 0;
 }
 
+iframe {
+  width: 100%;
+  min-height: 500px;
+}
+
 code {
   font-size: 14.5px;
   font-family: monospace;
@@ -70,16 +78,26 @@ code {
   background: #101010;
 }
 
-[slot="content"] {
-  padding: 0 2rem;
-  margin: auto;
-  line-height: 2;
-  clear: both;
+footer {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  padding: 1rem 0;
 }
 
-@media screen and (min-width: 768px) {
-  [slot="content"] {
-    max-width: 960px;
+footer blog-paginator {
+  order: -1;
+}
+
+@media only screen and (min-width: 1024px) {
+  footer {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr auto;
+  }
+
+  footer blog-paginator {
+    order: 0;
   }
 }
 
@@ -89,6 +107,20 @@ kemet-drawer {
   display: block;
   --kemet-drawer-background: var(--tertiary-color);
 }
+
+kemet-drawer [slot="content"] {
+  padding: 0 2rem;
+  margin: auto;
+  line-height: 2;
+  clear: both;
+}
+
+@media screen and (min-width: 768px) {
+  kemet-drawer [slot="content"] {
+    max-width: 960px;
+  }
+}
+
 
 .rouge-gutter pre {
   border-right: 1px solid #404040;
