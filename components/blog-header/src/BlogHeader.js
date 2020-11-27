@@ -30,7 +30,7 @@ export class BlogHeader extends LitElement {
         top: 0;
         z-index: 1;
         width: 100%;
-        height: 100px;
+        height: var(--header-height);
         padding: 1rem;
         box-sizing: border-box;
         background: var(--header-background-color);
@@ -38,7 +38,7 @@ export class BlogHeader extends LitElement {
       }
 
       :host([resize]) {
-        height: 64px;
+        height: var(--header-height-resize);
       }
 
       @media screen and (min-width: 640px) {
