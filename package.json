@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "node deploy.js"
+    "deploy": "node deploy.js",
+    "start": "bundle exec jekyll serve",
+    "build": "bundle exec jekyll build && rollup -c",
+    "build:blog": "bundle exec jekyll build",
+    "build:assets": "rollup -c",
+    "build:watch": "rollup -c --watch"
   },
   "repository": {
     "type": "git",
@@ -18,7 +23,18 @@
   },
   "homepage": "http://blog.hasanirogers.me",
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^11.2.1",
     "dotenv": "^8.2.0",
+    "rollup": "^2.43.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-minify-html-literals": "^1.2.6",
+    "rollup-plugin-terser": "^7.0.2",
     "ssh2-sftp-client": "^5.3.0"
+  },
+  "dependencies": {
+    "@kemet/kemet-drawer": "^1.3.1",
+    "@kemet/kemet-modal": "^1.0.2",
+    "@webcomponents/webcomponentsjs": "^2.5.0",
+    "algoliasearch": "^4.8.6"
   }
 }

@@ -17,6 +17,7 @@ export class BlogThemeToggle extends LitElement {
     this.theme = localStorage.getItem('hasanirogersblog-theme') ? localStorage.getItem('hasanirogersblog-theme') : 'light';
   }
 
+
   static styles = [
     css`
       :host {
