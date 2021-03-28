@@ -1,0 +1,24 @@
+name: deploy
+on:
+  push:
+    branches:
+      - rollup
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6 # Not needed with a .ruby-version file
+      - run: gem install bundler
+      - run: bundle install --path vendor/bundle
+      - run: npm install
+      - env:
+          FTP_DEPLOY_HOST: ${{ secrets.FTP_DEPLOY_HOST }}
+          FTP_DEPLOY_USERNAME: ${{ secrets.FTP_DEPLOY_USERNAME }}
+          FTP_DEPLOY_PASSWORD: ${{ secrets.FTP_DEPLOY_PASSWORD }}
+          FTP_DEPLOY_PORT: ${{ secrets.FTP_DEPLOY_PORT }}
+      - run: npm run build
+      - run: npm run deploy
