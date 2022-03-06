@@ -134,7 +134,7 @@ export class BlogHeader extends LitElement {
 
   toggleDrawer() {
     const drawer = document.querySelector('kemet-drawer');
-    drawer.toggle();
+    drawer.opened = !drawer.opened;
   }
 
   transformHeader() {
@@ -151,6 +151,6 @@ export class BlogHeader extends LitElement {
 
   openModal() {
     const modal = document.getElementById('searchmodal');
-    modal.open();
+    modal.opened = true;
   }
 }

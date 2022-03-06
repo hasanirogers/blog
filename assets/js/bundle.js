@@ -1,5 +1,4 @@
-import '@kemet/kemet-drawer/kemet-drawer.js';
-import '@kemet/kemet-modal/kemet-modal.js';
+import 'kemet-ui';
 import '../../components/blog-header/blog-header.js';
 import '../../components/blog-post-excerpt/blog-post-excerpt.js';
 import '../../components/blog-tag/blog-tag.js';
