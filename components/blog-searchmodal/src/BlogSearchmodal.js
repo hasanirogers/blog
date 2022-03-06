@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
-import algoliasearch from 'algoliasearch';
 import { svgSearch } from '../../../assets/js/svg.js';
+import algoliasearch from 'algoliasearch/dist/algoliasearch.esm.browser.js';
 
 export class BlogSearchmodal extends LitElement {
   static get properties() {
