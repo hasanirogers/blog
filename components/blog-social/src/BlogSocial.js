@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit-element';
+import { LitElement, html, css } from 'lit';
 import { svgCodePen, svgGitHub, svgLinkedIn, svgNPM, svgStackBlitz, svgTwitter } from '../../../assets/js/svg.js';
 
 export class BlogSocial extends LitElement {

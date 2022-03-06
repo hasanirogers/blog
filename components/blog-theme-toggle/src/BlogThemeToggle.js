@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit-element';
+import { LitElement, html, css } from 'lit';
 import { svgSun, svgMoon } from '../../../assets/js/svg.js';
 
 export class BlogThemeToggle extends LitElement {

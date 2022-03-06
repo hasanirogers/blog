@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit-element';
+import { LitElement, html, css } from 'lit';
 import { svgSearch } from '../../../assets/js/svg.js';
 import algoliasearch from 'algoliasearch/dist/algoliasearch.esm.browser.js';
 

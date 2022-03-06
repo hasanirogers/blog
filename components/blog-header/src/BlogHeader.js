@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit-element';
+import { LitElement, html, css } from 'lit';
 import { svgHamburger, svgSearch } from '../../../assets/js/svg.js';
 import '../../blog-site-links/blog-site-links.js';
 
