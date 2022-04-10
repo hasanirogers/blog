@@ -7,7 +7,7 @@ html {
   --tertiary-color: #101010;
   --text-color: #5d5d5d;
   --link-color: #007dc1;
-  --code-color: #d69d85;
+  --code-color: #ddd4d0;
   --callout-color:#ffeb51;
   --callout-border-color: #ff9b51;
 
@@ -73,9 +73,14 @@ iframe {
 code {
   font-size: 14.5px;
   font-family: monospace;
-  padding: 2px 4px;
+  padding: 4px 8px;
+  border: 1px dashed #202020;
+  white-space: nowrap;
+}
+
+pre code {
   color: var(--code-color);
-  background: #101010;
+  background: #202020;
 }
 
 footer {
