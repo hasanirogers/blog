@@ -1,4 +1,4 @@
-import 'kemet-ui';
+import '../../node_modules/kemet-ui';
 import '../../components/blog-header/blog-header.js';
 import '../../components/blog-post-excerpt/blog-post-excerpt.js';
 import '../../components/blog-tag/blog-tag.js';
